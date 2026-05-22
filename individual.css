@@ -1,0 +1,282 @@
+:root {
+    --primary: #7A1E2C;
+    --secondary: #A63D40;
+    --background: #FFF8F3;
+    --text-dark: #2B2B2B;
+    --text-light: #a0d537;
+    --accent: #F4A261;
+    --footer: #5C1822;
+    --shadow: rgba(0,0,0,0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--text-dark);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/*NAVBAR*/
+.navbar {
+    background: rgba(122, 30, 44, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px var(--shadow);
+}
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+/*HERO SECTION*/
+.hero,
+.hero-services,
+.hero-booking,
+.hero-shop {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+}
+
+.hero-services,
+.hero-booking,
+.hero-shop {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-services {
+    background-image: url('https://images.unsplash.com/photo-1517849845537-4d257902454a');
+}
+
+.hero-booking {
+    background-image: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b');
+}
+
+.hero-shop {
+    background-image: url('https://images.unsplash.com/photo-1583512603806-077998240c7a');
+}
+
+.hero-services::before,
+.hero-booking::before,
+.hero-shop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero .content,
+.hero-services .content,
+.hero-booking .content,
+.hero-shop .content {
+    position: relative;
+    z-index: 2;
+}
+
+/*CAROUSEL*/
+.carousel-item {
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.carousel-overlay h1 {
+    font-size: 3rem;
+}
+
+.carousel-overlay p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.img-fluid{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center 35%;
+    border-radius: 20px;
+}
+
+/*BUTTONS*/
+.btn-primary,
+button {
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover,
+button:hover {
+    background: var(--accent);
+    color: var(--text-dark);
+}
+
+/*SERVICES / PRODUCTS / CARD */
+.service-card,
+.product-card,
+.box,
+.booking-form {
+    background: white;              /* outer box color */
+    width: 700px;                   /* box width */
+    max-width: 90%;
+    margin: 50px auto;              /* center */
+    padding: 35px;
+    border-radius: 20px;            /* rounded corners */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);   /* visible shadow */
+}
+
+
+.service-card:hover,
+.product-card:hover,
+.box:hover {
+    transform: translateY(-8px);
+}
+
+.service-card img,
+.product-card img,
+.box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/*CONTENT */
+.card-content {
+    padding: 20px;
+    overflow: hidden; /* prevents image overflow */
+}
+.scroll-text {
+    height: 180px;
+    overflow-y: auto;
+    padding: 12px;
+    background: #f8f8f8;
+    color: var(--text-dark);
+    border-radius: 8px;
+}
+
+/*FORMS*/
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary);
+}
+
+/*CONTAINER */
+.page-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px;
+    justify-content: center;
+}
+
+/*FOOTER */
+.footer {
+    background: var(--footer);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* MOBILE*/
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-item {
+        height: 50vh;
+    }
+
+    .carousel-overlay h1 {
+        font-size: 2rem;
+    }
+}
